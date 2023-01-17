@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- ##### Best Receipe Area Start ##### -->
+    <section class="best-receipe-area">
+        <div class="container">
+            <div class="row">
+                {%for chave, valor in nome_do_aluno.items %}
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="{% static 'img/bg-img/foto_laptop.png' %}" alt="">
+                        <div class="receipe-content">
+                            <a href="{% url 'aluno' %}">
+                                <h5>{{ valor }}</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+                {% endfor %}              
+            </div>
+        </div>
+    </section>
+    <!-- ##### Best Receipe Area End ##### -->
+
+    
+
+{% endblock %}
